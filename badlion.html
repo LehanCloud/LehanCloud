@@ -34,19 +34,21 @@
             </div>
 
             <!-- Nav -->
-                        <nav id="nav">
+            <nav id="nav">
                 <ul>
                     <li class="current"><a href="index.html">Inicio</a></li>
                     <li>
                         <a href="#">Descargas</a>
                         <ul>
                             <li><a href="index.html">Clientes</a></li>
-                            <!-- <li><a href="#">Paquetes de texturas</a></li>
+                            <!-- Lo dejo aqui para agregar las descargas extras proximamente 
+                             
+                            <li><a href="#">Paquetes de texturas</a></li>
                             <li><a href="#">Launchers</a></li> -->
                         </ul>
                     </li>
                     <li><a href="lehan-client.html">LehanClient</a></li>
-                    <li><a href="https://paypal.me/sapoepico?country.x=CL&locale.x=es_XC">¡Apoyanos!</a></li>
+                    <li><a href="https://paypal.me/sapoepico?country.x=CL&locale.x=es_XC">¡Apoyanos!</a></li>                    
                     <li><a href="https://discord.gg/BVW6jDx3Pr">Soporte</a></li>
                     <li><a href="tyc.html">Terminos y condiciones</a></li>
 
@@ -208,83 +210,122 @@
     </section> -->
 
         <!-- Footer -->
+        <!-- Footer -->
         <section id="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-8 col-12-medium">
+                    <!-- Sobre Nosotros -->
+                    <div class="col-4 col-12-medium">
+                        <section>
+                            <header>
+                                <h2>Sobre nosotros</h2>
+                            </header>
+                            <ul class="divided">
+                                <li><a href="tyc.html">Términos y Condiciones</a></li>
+                                <li><a href="creditos.html" style="font-size: smaller;">Créditos</a></li>
+                            </ul>
+                        </section>
+                    </div>
 
-                        <div class="col-4 col-6-medium col-12-small">
-                            <section>
-                                <header>
-                                    <h2>Sobre nosotros</h2>
-                                </header>
-                                <ul class="divided">
-                                    <li><a href="tyc.html">Terminos y Condiciones</a></li>
-
-                                </ul>
-                            </section>
-                        </div>
-                        <div class="col-4 col-12-medium">
-                            <section>
-                                <header>
-                                    <h2>Redes</h2>
-                                </header>
-                                <ul class="social">
-                                    <div class="col-6 col-12-small">
-                                        <section>
-                                            <div class="social-icons">
-                                                <a href="https://discord.gg/lehan23">
-                                                    <img src="images/discordcirc.png" alt="Discord">
-                                                </a>
-                                                <a href="https://www.instagram.com/lehanclient/">
-                                                    <img src="images/instagram.png" alt="Instagram">
-                                                </a>
-                                                <a href="https://www.youtube.com/@Lehan23">
-                                                    <img src="images/youtube.png" alt="YouTube">
-                                                </a>
-                                            </div>
-                                        </section>
-                                    </div>
-
-                                    <style>
-                                        .social-icons {
-                                            display: flex;
-                                            gap: 10px;
-                                            /* Espaciado entre los íconos */
-                                        }
-
-                                        .social-icons img {
-                                            width: 50px;
-                                            height: 50px;
-                                        }
-                                    </style>
-
-                                </ul>
-                                <ul class="contact">
-                                    <li>
-
-                                    </li>
-                                    <li>
-                                        <h3>Mail</h3>
-                                        <p><a>soportelehansmp@gmail.com</a></p>
-                                    </li>
-                                </ul>
-                            </section>
-                        </div>
-                        <div class="col-12">
-
-                            <!-- Copyright -->
-                            <div id="copyright">
-                                <ul class="links">
-                                    <li>&copy; LehanCloud - Lehan23. Todos los derechos reservados.</li>
-                                    <li>Diseñado por: <a href="http://html5up.net">HTML5 UP</a></li>
-                                </ul>
+                    <!-- Redes Sociales -->
+                    <div class="col-4 col-12-medium">
+                        <section>
+                            <header>
+                                <h2>Redes</h2>
+                            </header>
+                            <div class="social-icons">
+                                <a href="https://discord.gg/lehan23">
+                                    <img src="images/discordcirc.png" alt="Discord">
+                                </a>
+                                <a href="https://www.instagram.com/lehanclient/">
+                                    <img src="images/instagram.png" alt="Instagram">
+                                </a>
+                                <a href="https://www.youtube.com/@Lehan23">
+                                    <img src="images/youtube.png" alt="YouTube">
+                                </a>
                             </div>
+                        </section>
+                    </div>
 
+                    <!-- Contacto -->
+                    <div class="col-4 col-12-medium">
+                        <section>
+                            <header>
+                                <h2>Contacto</h2>
+                            </header>
+                            <ul class="contact">
+                                <li>
+                                    <h3>Mail</h3>
+                                    <p><a href="mailto:soportelehansmp@gmail.com">soportelehansmp@gmail.com</a></p>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="row">
+                    <div class="col-12">
+                        <div id="copyright">
+                            <ul class="links">
+                                <li>&copy; LehanCloud - Lehan23. Todos los derechos reservados.</li>
+                                <li>Diseñado por: <a href="http://html5up.net">HTML5 UP</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <style>
+                #footer {
+                    background-color: #252122;
+                    padding: 30px 15px;
+                    text-align: center;
+                    border-top: 1px solid #ddd;
+                }
+
+                #footer h2 {
+                    font-size: 1.5em;
+                    margin-bottom: 15px;
+                }
+
+                .divided li {
+                    margin-bottom: 10px;
+                }
+
+                .social-icons {
+                    display: flex;
+                    justify-content: center;
+                    gap: 15px;
+                }
+
+                .social-icons img {
+                    width: 40px;
+                    height: 40px;
+                    transition: transform 0.2s ease;
+                }
+
+                .social-icons img:hover {
+                    transform: scale(1.1);
+                }
+
+                #copyright {
+                    margin-top: 20px;
+                    font-size: 0.9em;
+                    color: #777;
+                }
+
+                #copyright a {
+                    color: #007BFF;
+                    text-decoration: none;
+                }
+
+                #copyright a:hover {
+                    text-decoration: underline;
+                }
+            </style>
         </section>
+
 
     </div>
 
@@ -295,6 +336,10 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1604258361998962"
+    crossorigin="anonymous"></script>
+    <script async src="https://fundingchoicesmessages.google.com/i/pub-1604258361998962?ers=1"></script>
+    <script>(function () { function signalGooglefcPresent() { if (!window.frames['googlefcPresent']) { if (document.body) { const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe); } else { setTimeout(signalGooglefcPresent, 0); } } } signalGooglefcPresent(); })();</script>
 
 </body>
 
