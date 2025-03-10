@@ -186,10 +186,45 @@
 <!-- Banner izquierdo -->
 <div class="col-2" style="text-align: center;">
     <p style="font-weight: bold; margin-bottom: 10px;">Anuncio Externo</p>
-    <a href="https://discord.gg/azzpFxHRzu" target="_blank">
-        <img src="logos/anunciateaqui.png" alt="Anuncio" width="728" height="120" style="border: none;">
+    <a id="bannerLink" href="https://discord.gg/azzpFxHRzu" target="_blank">
+        <img id="bannerImage" alt="Anuncio" width="1000" height="120" style="border: none;">
     </a>
 </div>
+
+<script>
+    // Lista de imágenes para alternar
+    const images = [
+        "logos/anunciateaqui0.png",
+        "logos/anunciateaqui1.png",
+        "logos/anunciateaqui2.png",
+        "logos/anunciateaqui3.png",
+        "logos/anunciateaqui4.png"
+    ];
+
+    let currentIndex = Math.floor(Math.random() * images.length); // Elegir un índice aleatorio al inicio
+
+    function getRandomIndex() {
+        let newIndex;
+        do {
+            newIndex = Math.floor(Math.random() * images.length);
+        } while (newIndex === currentIndex); // Asegurar que no se repita la misma imagen consecutivamente
+        return newIndex;
+    }
+
+    function changeBannerImage() {
+        currentIndex = getRandomIndex();
+        document.getElementById("bannerImage").src = images[currentIndex];
+    }
+
+    // Establecer una imagen aleatoria al inicio
+    document.getElementById("bannerImage").src = images[currentIndex];
+
+    // Cambiar la imagen cada 4 segundos aleatoriamente
+    setInterval(changeBannerImage, 4000);
+</script>
+
+
+
 
 
                         <!-- Portfolio -->
@@ -197,7 +232,6 @@
                             <header class="major">
                                 <h2>Clientes</h2>
                             </header>
-
 
 
                             <!--Lehan23 CLients-->
