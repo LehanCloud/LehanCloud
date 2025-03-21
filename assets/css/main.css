@@ -179,7 +179,7 @@ input, select, textarea {
 
 	.container {
 		margin: 0 auto;
-		max-width: 100%;
+		max-width: 100;
 		width: 70em;
 	}
 
@@ -1601,6 +1601,8 @@ input, select, textarea {
 			margin-bottom: 0;
 		}
 
+		
+
 /* Button */
 /* Asegurarse de que el box-sizing esté activado para todo */
 *, *:before, *:after {
@@ -1614,27 +1616,44 @@ input[type="reset"],
 button,
 .button {
     -webkit-appearance: none;
-    display: inline-flex; /* Usar flexbox para centrar el contenido */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    display: inline-flex; /* Flexbox para centrar contenido */
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     cursor: pointer;
-    border: 0;
-    border-radius: 5px;
+    border: none;
+    border-radius: 5px; /* Bordes más suaves */
     background: #d52349;
-    color: #fff !important;
-    font-weight: 700;
-    outline: 0;
+    color: #ffffff !important;
+    font-weight: 600;
+    outline: none;
     font-size: 1.1em;
-    padding: 0.65em 1.5em; /* Ajustar padding para centrado adecuado */
+    padding: 0.65em 1.5em; /* Mantiene el tamaño original */
     text-align: center;
-    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
-    -moz-transition: background-color .25s ease-in-out;
-    -webkit-transition: background-color .25s ease-in-out;
-    -ms-transition: background-color .25s ease-in-out;
-    transition: background-color .25s ease-in-out;
-    width: 100%; /* El botón ocupará el 100% de su contenedor */
+    white-space: nowrap;
+    width: 100%; /* Mantiene el ancho */
+
+    /* Sombra ligera para dar un efecto elevado */
+    box-shadow: 0 2px px rgba(0, 0, 0, 0.10);
+
+    /* Transición suave */
+    transition: background-color 0.3s, transform 0.1s ease-in-out, box-shadow 0.3s;
 }
+
+/* Efecto hover */
+.button:hover {
+    background: #e53359;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Efecto de "presión" al hacer clic */
+.button:active {
+    background: #c51349;
+    transform: translateY(2px); /* Simula un botón presionado */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
 
 /* Cambiar color de fondo para la clase 'alt' */
 button.alt, .button.alt {
@@ -1704,11 +1723,17 @@ button.alt:active, .button.alt:active {
 				width: auto;
 			}
 
-		.image.featured {
-			display: block;
-			width: 100%;
-			margin: 0 0 2em 0;
-		}
+			.image.featured {
+				border-radius: 8px;
+				overflow: hidden;
+				transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+			}
+			
+			.image.featured:hover {
+				transform: scale(1.05);
+				box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+			}
+			
 
 		.image.left {
 			float: left;
@@ -2077,45 +2102,77 @@ button.alt:active, .button.alt:active {
 
 /* Nav */
 
-	#nav {
-		margin: 2.5em 0 0 0;
-	}
+/* Fuentes personalizadas */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); /* Fuente Poppins */
 
-		#nav > ul {
-			margin: 0;
-		}
+/* Estilos generales del menú */
+#nav {
+    margin: 2.5em 0 0 0;
+    font-family: 'Poppins', sans-serif; /* Aplicar la fuente Poppins */
+}
 
-			#nav > ul > li {
-				display: inline-block;
-				font-style: italic;
-				margin: 0 0.35em 0 0.35em;
-			}
+/* Lista del menú */
+#nav > ul {
+    margin: 0;
+}
 
-				#nav > ul > li > ul {
-					display: none;
-				}
+/* Estilos base de los botones */
+#nav > ul > li {
+    display: inline-block;
+    margin: 0 0.35em;
+}
 
-				#nav > ul > li > a {
-					border-radius: 5px;
-					color: #5d5d5d;
-					text-decoration: none;
-					padding: 0.6em 1.2em 0.6em 1.2em;
-					-moz-transition: background-color .25s ease-in-out;
-					-webkit-transition: background-color .25s ease-in-out;
-					-ms-transition: background-color .25s ease-in-out;
-					transition: background-color .25s ease-in-out;
-					outline: 0;
-				}
+/* Estilos de los enlaces */
+#nav > ul > li > a {
+    border-radius: 5px;
+    color: #5d5d5d;
+    text-decoration: none;
+    padding: 0.6em 1.2em; /* Mantener el tamaño original */
+    transition: all 0.3s ease-in-out;
+    font-weight: 600;
+    position: relative;
+}
 
-				#nav > ul > li:hover > a, #nav > ul > li.active > a {
-					background: #f3f3f3;
-				}
+/* Efecto hover: cambio de color y elevación */
+#nav > ul > li > a:hover {
+    background: #e0e0e0; /* Un tono más suave al pasar el cursor */
+    color: #252122;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
 
-				#nav > ul > li.current > a {
-					background: #d52349;
-					color: #fff !important;
-					font-weight: 700;
-				}
+/* Efecto de "clic" */
+#nav > ul > li > a:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón activo o seleccionado */
+#nav > ul > li.current > a {
+    background: #d52349;
+    color: #fff !important;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(213, 35, 73, 0.5);
+}
+
+/* Efecto de subrayado animado */
+#nav > ul > li > a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: #d52349;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+/* Al pasar el cursor, se muestra el subrayado */
+#nav > ul > li > a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
 
 	.dropotron {
 		border-radius: 5px;
@@ -2200,7 +2257,7 @@ button.alt:active, .button.alt:active {
 				font-size: 1.5em;
 			}
 
-/* Intro */
+/* Intro (esto son las cajas de alrededor de "clientes de minecraft" si no las cambias se ve mal*/ 
 
 	#intro {
 		text-align: center;
@@ -2257,7 +2314,7 @@ button.alt:active, .button.alt:active {
 			margin: 0;
 		}
 
-/* Main */
+/* Main (este es el color de fondo/base de la pagina, con esto se cambia todo abajo del nav */
 
 	#main {
 		position: relative;
@@ -2893,11 +2950,43 @@ button.alt:active, .button.alt:active {
 			#main {
 				padding: 20px 0;
 			}
+			
+			#main .row {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+			}
+			
+			#main .col-2 {
+				flex: 0 0 160px;
+			}
+			
+			#main .col-8 {
+				flex: 1;
+			}
+			
 
 		/* Footer */
 
 			#footer {
 				padding: 40px 0 20px 0;
 			}
+
+			#main .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#main .col-2 {
+    flex: 0 0 160px;
+}
+
+#main .col-8 {
+    flex: 1;
+}
+
+
+
 
 	}
